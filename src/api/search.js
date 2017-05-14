@@ -33,4 +33,6 @@ searchApi.get('/latest', (req, res) => {
         });
 });
 
+//TODO: I can paginate through the responses by adding a ?offset=2 parameter to the URL.
+
 module.exports = searchApi;
