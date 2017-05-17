@@ -8,7 +8,7 @@ const searchApi = express.Router();
 
 searchApi.get('/search/:query', (req, res) => {
     let query = req.params.query;
-    let offset = req.params.offset || 1;
+    let offset = req.query.offset || 1;
     let timestamp = Date.now();
 
     client.search(query, {page: offset})
