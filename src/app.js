@@ -49,7 +49,8 @@ db.once('open', function () {
 
 // Generate a URL with current server hostname.
 function genFullUrl(req, url) {  
-    return `${req.protocol}://${req.hostname}:${getPort()}/${url}`;
+    //return `${req.protocol}://${req.hostname}:${getPort()}/${url}`;
+    return `${req.protocol}://${req.hostname}/${url}`;
 }
 
 // Get node.js port.
