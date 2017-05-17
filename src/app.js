@@ -19,14 +19,14 @@ app.get('/', (req, res) => {
         userStory1: 'I can get the image URLs, alt text and page urls for a set of images relating to a given search string.',
         userStory2: 'I can paginate through the responses by adding a ?offset=2 parameter to the URL.',
         userStory3: 'I can get a list of the most recently submitted search strings.',
-        section1: 'Usage Example',
+        section1: 'Search Example',
         content1: genFullUrl(req, "api/search/funny%20cats?offset=10"),
-        section2: 'Output Example',
-        content2: "{}",
-        section3: 'Usage Example',
+        section2: 'Will return image search metadata:',
+        content2: '[{"type":"image/jpeg","width":1280,"height":720,"size":75446,"url":"http://s2.dmcdn.net/Ub1O8/1280x720-mCQ.jpg","thumbnail":{"url":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT08JNesP-YK8wcpj0VVuyPpxcY1Lv9VelCjhtZTxmudXdxKadERMW5ZIY","width":150,"height":84},"description":"FUNNY CATS VIDEOS - Video Dailymotion","parentPage":"http://www.dailymotion.com/video/x1d97q7_funny-cats-videos_animals"}]',
+        section3: 'Latest Queries Example',
         content3: genFullUrl(req, "api/latest"),
         section4: 'Will return recent queries:',
-        content4: '{}'
+        content4: '[{"query":"funny cats","timestamp":1495016475554},{"query":"birds","timestamp":1494586059459}]'
     });
 });
 
