@@ -30,8 +30,10 @@ app.get('/', (req, res) => {
     });
 });
 
+// Use custom router with our search and latest endpoints.
 app.use('/api', searchApi);
 
+// Open and return DB connection.
 function openDatabase(url) {
     mongoose.Promise = global.Promise;
     mongoose.connect(url);
@@ -39,6 +41,7 @@ function openDatabase(url) {
     return mongoose.connection;
 }
 
+// Log DB events.
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function () {
     console.log('Database opened.')
