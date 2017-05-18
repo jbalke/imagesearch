@@ -13,7 +13,7 @@ searchApi.get('/search/:query', (req, res) => {
 
     client.search(query, {page: offset})
         .then(results => {
-            res.status(200).json(results);
+            res.status(200).json(results.map(filterResults));
         })
         .catch((error) => {
             res.status(500).json(error);
@@ -34,6 +34,14 @@ searchApi.get('/latest', (req, res) => {
         });
 });
 
-//TODO: I can paginate through the responses by adding a ?offset=2 parameter to the URL.
+function filterResults(image) {
+    return {
+        url: image.url,
+        title: image.description,
+        thumbnail: image.thumbnail.url,
+        source: image.parentPage,
+        type: image.type
+    }
+}
 
 module.exports = searchApi;
